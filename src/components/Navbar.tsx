@@ -4,7 +4,6 @@ import {
   Burger,
   Title,
   Anchor,
-  Button,
   Flex,
   useMantineTheme,
   Drawer,
@@ -13,12 +12,10 @@ import {
 import { useDisclosure } from "@mantine/hooks";
 
 import React from "react";
-import Hero from "./Hero";
 
-function Navbar() {
+const Navbar: React.FC = () => {
   const theme = useMantineTheme();
   const [opened, { toggle, close }] = useDisclosure(false);
-  const [activeLink, setActiveLink] = React.useState(0);
 
   const links = [
     { label: "Home" },
@@ -34,7 +31,7 @@ function Navbar() {
       underline="never"
       onClick={(event) => {
         event.preventDefault();
-        setActiveLink(index);
+
         close();
       }}
     >
@@ -79,6 +76,6 @@ function Navbar() {
       </Drawer>
     </AppShell>
   );
-}
+};
 
 export default Navbar;

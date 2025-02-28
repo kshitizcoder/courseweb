@@ -10,11 +10,10 @@ import {
   useMantineTheme,
 } from "@mantine/core";
 import { MdOutlineArrowOutward } from "react-icons/md";
-import React, { useState } from "react";
+import React from "react";
 import { benefits } from "../dummyData/data";
 
 const Benefits: React.FC = () => {
-  const [data, setData] = useState(benefits);
   const theme = useMantineTheme();
 
   return (
@@ -37,7 +36,7 @@ const Benefits: React.FC = () => {
           </Button>
         </Group>
         <Grid mt={"2rem"}>
-          {data.map((value) => {
+          {benefits.map((value) => {
             return (
               <Grid.Col
                 key={value.id}

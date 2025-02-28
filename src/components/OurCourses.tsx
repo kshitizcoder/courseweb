@@ -10,11 +10,10 @@ import {
   Title,
   useMantineTheme,
 } from "@mantine/core";
-import React, { useState } from "react";
+import React from "react";
 import { ourCourse } from "../dummyData/data";
 
 const OurCourses: React.FC = () => {
-  const [data, setData] = useState(ourCourse);
   const theme = useMantineTheme();
   return (
     <Box w={{ base: "100%", sm: "90%", md: "90%" }} mx="auto">
@@ -36,7 +35,7 @@ const OurCourses: React.FC = () => {
           </Button>
         </Group>
         <Grid mt={"2rem"}>
-          {data.map((value) => {
+          {ourCourse.map((value) => {
             return (
               <Grid.Col key={value.id} span={{ base: 12, sm: 6 }}>
                 <Card px={"2rem"} py={"2rem"}>
